@@ -81,7 +81,7 @@ func loginMonitor(so socketio.Socket) func(monitor string) {
 
 func loginCliente(so socketio.Socket) func(id string) {
 	return func(id string) {
-		if buscarEnSlice(id) {
+		if buscarEnSlice(id) == false {
 			tmp := Cliente{id: id, socket_id: so.Id()}
 			CLIENTES = append(CLIENTES, &tmp)
 
